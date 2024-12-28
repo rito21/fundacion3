@@ -2,7 +2,7 @@
 import Layout from "~/layouts/Layout.astro";
 import Section from "~/components/Section.astro";
 import Container from "~/components/Container.astro";
-import { Image } from "astro:assets";
+import { Image, Picture } from "astro:assets";
 import Hero from "~/components/Hero.astro";
 import Button from "~/components/Button.astro";
 import Faq from "~/components/Faq.astro";
@@ -40,7 +40,7 @@ const faq = [
 
 <Layout title="Home" pageTitle="Home" description="Welcome to our pet shelter!">
 	<Section class:list={"relative"}>
-		<Image
+		<Picture
 			src={CatBackground}
 			alt="Cat"
 			class:list={"absolute inset-0 w-full h-full object-cover"}

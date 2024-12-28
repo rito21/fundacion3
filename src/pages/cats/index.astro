@@ -39,10 +39,10 @@ const cats = await getCollection("cats");
 				</div>
 
 				<div>
-					<label for="race">Race</label>
+					<label for="breed">Breed</label>
 					<select
-						name="race"
-						id="race"
+						name="breed"
+						id="breed"
 						class="bg-transparent rounded-full ring-1 px-2 py-1 ring-teal-500 mt-2"
 					>
 						<option value="all">All</option>
@@ -85,7 +85,7 @@ const cats = await getCollection("cats");
 		if (catFilterWrapper) {
 			const catCards = document.querySelectorAll("[data-cat]")!;
 			const genderFilter = document.getElementById("gender")!;
-			const raceFilter = document.getElementById("race")!;
+			const breedFilter = document.getElementById("breed")!;
 			const childFriendlyFilter = document.getElementById("child-friendly")!;
 			const sterilizedFilter = document.getElementById("sterilized")!;
 
@@ -96,7 +96,7 @@ const cats = await getCollection("cats");
 
 			const updateFilters = () => {
 				const selectedGender = genderFilter ? (genderFilter as HTMLSelectElement).value : "all";
-				const selectedRace = raceFilter ? (raceFilter as HTMLSelectElement).value : "all";
+				const selectedBreed = breedFilter ? (breedFilter as HTMLSelectElement).value : "all";
 				const selectedChildFriendly = childFriendlyFilter
 					? (childFriendlyFilter as HTMLSelectElement).value
 					: "all";
@@ -105,7 +105,7 @@ const cats = await getCollection("cats");
 				catsData.forEach((cat) => {
 					cat.show =
 						(selectedGender === "all" || cat.gender === selectedGender) &&
-						(selectedRace === "all" || cat.race === selectedRace) &&
+						(selectedBreed === "all" || cat.breed === selectedBreed) &&
 						(selectedChildFriendly === "all" || cat.childFriendly.toString() === selectedChildFriendly) &&
 						(selectedSterilized === "all" || cat.sterilized.toString() === selectedSterilized);
 				});
@@ -124,16 +124,16 @@ const cats = await getCollection("cats");
 			const updateOptions = () => {
 				const visibleCats = catsData.filter((cat) => cat.show);
 
-				const races = new Set(visibleCats.map((cat) => cat.race));
-				const selectedRace = (raceFilter as HTMLSelectElement).value;
-				raceFilter.innerHTML = '<option value="all">All</option>';
-				races.forEach((race) => {
+				const breeds = new Set(visibleCats.map((cat) => cat.breed));
+				const selectedBreed = (breedFilter as HTMLSelectElement).value;
+				breedFilter.innerHTML = '<option value="all">All</option>';
+				breeds.forEach((breed) => {
 					const option = document.createElement("option");
-					option.value = race;
-					option.textContent = race;
-					raceFilter.appendChild(option);
+					option.value = breed;
+					option.textContent = breed;
+					breedFilter.appendChild(option);
 				});
-				(raceFilter as HTMLSelectElement).value = selectedRace;
+				(breedFilter as HTMLSelectElement).value = selectedBreed;
 
 				const childFriendlyOptions = new Set(visibleCats.map((cat) => cat.childFriendly.toString()));
 				const selectedChildFriendly = (childFriendlyFilter as HTMLSelectElement).value;
@@ -159,7 +159,7 @@ const cats = await getCollection("cats");
 			};
 
 			genderFilter.addEventListener("change", updateFilters);
-			raceFilter.addEventListener("change", updateFilters);
+			breedFilter.addEventListener("change", updateFilters);
 			childFriendlyFilter.addEventListener("change", updateFilters);
 			sterilizedFilter.addEventListener("change", updateFilters);
 

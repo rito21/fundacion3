@@ -2,7 +2,7 @@
 	{
 		"id": "chairman-meow",
 		"name": "Chairman Meow",
-		"race": "Domestic Short Hair",
+		"breed": "Domestic Short Hair",
 		"gender": "male",
 		"age": 1,
 		"birthDate": "2024-01-01",
@@ -18,7 +18,7 @@
 	{
 		"id": "catrick-swayze",
 		"name": "Catrick Swayze",
-		"race": "Siamese",
+		"breed": "Siamese",
 		"gender": "male",
 		"age": 3,
 		"birthDate": "2021-05-15",
@@ -34,7 +34,7 @@
 	{
 		"id": "clawdia",
 		"name": "Clawdia",
-		"race": "Persian",
+		"breed": "Persian",
 		"gender": "female",
 		"age": 2,
 		"birthDate": "2022-08-10",
@@ -50,7 +50,7 @@
 	{
 		"id": "furrball-mcwhiskers",
 		"name": "Furrball McWhiskers",
-		"race": "Maine Coon",
+		"breed": "Maine Coon",
 		"gender": "male",
 		"age": 4,
 		"birthDate": "2020-02-20",
@@ -66,7 +66,7 @@
 	{
 		"id": "pawdre-hepburn",
 		"name": "Pawdre Hepburn",
-		"race": "Bengal",
+		"breed": "Bengal",
 		"gender": "female",
 		"age": 1,
 		"birthDate": "2023-03-30",
@@ -82,7 +82,7 @@
 	{
 		"id": "purrlock-holmes",
 		"name": "Purrlock Holmes",
-		"race": "British Shorthair",
+		"breed": "British Shorthair",
 		"gender": "male",
 		"age": 5,
 		"birthDate": "2019-11-11",
@@ -98,7 +98,7 @@
 	{
 		"id": "reckoning",
 		"name": "Reckoning",
-		"race": "Russian Blue",
+		"breed": "Russian Blue",
 		"gender": "female",
 		"age": 2,
 		"birthDate": "2022-06-25",
@@ -114,7 +114,7 @@
 	{
 		"id": "sir-pounce-a-lot",
 		"name": "Sir Pounce-a-Lot",
-		"race": "Ragdoll",
+		"breed": "Ragdoll",
 		"gender": "male",
 		"age": 3,
 		"birthDate": "2021-09-05",
@@ -130,7 +130,7 @@
 	{
 		"id": "whiskerfield-stallone",
 		"name": "Whiskerfield Stallone",
-		"race": "Sphynx",
+		"breed": "Sphynx",
 		"gender": "male",
 		"age": 4,
 		"birthDate": "2020-04-18",

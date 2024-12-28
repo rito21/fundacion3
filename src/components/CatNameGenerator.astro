@@ -7,6 +7,7 @@ const { title = "", link } = Astro.props;
 	<h2 class="text-white text-center">{title}</h2>
 
 	<div class="max-w-md w-full mx-auto flex items-center gap-x-4">
+		<label for="generator" class="sr-only">Generated cat name</label>
 		<input type="text" name="generator" id="cat-generator-input" readonly value="Captain Steve" />
 		<button class="button button-teal" id="button-generate-name" aria-label="Generate a new cat name">
 			<svg xmlns="http://www.w3.org/2000/svg" class="size-7 origin-center" viewBox="0 0 24 24" id="dice-icon">

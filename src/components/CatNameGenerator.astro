@@ -3,7 +3,7 @@ import catNames from "~/data/names.json";
 const { title = "", link } = Astro.props;
 ---
 
-<div class="flex flex-col items-center gap-8 max-w-4xl w-full mx-auto">
+<div id="cat-generator-wrapper" class="flex flex-col items-center gap-8 max-w-4xl w-full mx-auto">
 	<h2 class="text-white text-center">{title}</h2>
 
 	<div class="max-w-md w-full mx-auto flex items-center gap-x-4">
@@ -23,26 +23,32 @@ const { title = "", link } = Astro.props;
 
 <script>
 	document.addEventListener("astro:page-load", () => {
-		const button = document.getElementById("button-generate-name")! as HTMLButtonElement;
-		const input = document.getElementById("cat-generator-input")! as HTMLInputElement;
-		const names = JSON.parse(document.getElementById("names")!.dataset.names!);
-		const diceIcon = document.getElementById("dice-icon")!;
+		const catGeneratorWrapper = document.getElementById("cat-generator-wrapper");
 
-		input.addEventListener("click", () => {
-			input.select();
-		});
+		if (catGeneratorWrapper) {
+			const button = document.getElementById("button-generate-name")! as HTMLButtonElement;
+			const input = document.getElementById("cat-generator-input")! as HTMLInputElement;
+			const names = JSON.parse(document.getElementById("names")!.dataset.names!);
+			const diceIcon = document.getElementById("dice-icon")!;
 
-		button.addEventListener("click", () => {
-			const firstName = names.firstNames[Math.floor(Math.random() * names.firstNames.length)];
-			const lastName = names.lastNames[Math.floor(Math.random() * names.lastNames.length)];
-			input.value = `${firstName} ${lastName}`;
+			if (names) {
+				input.addEventListener("click", () => {
+					input.select();
+				});
 
-			diceIcon.classList.add("animate");
+				button.addEventListener("click", () => {
+					const firstName = names.firstNames[Math.floor(Math.random() * names.firstNames.length)];
+					const lastName = names.lastNames[Math.floor(Math.random() * names.lastNames.length)];
+					input.value = `${firstName} ${lastName}`;
 
-			setTimeout(() => {
-				diceIcon.classList.remove("animate");
-			}, 1000);
-		});
+					diceIcon.classList.add("animate");
+
+					setTimeout(() => {
+						diceIcon.classList.remove("animate");
+					}, 1000);
+				});
+			}
+		}
 	});
 </script>
 

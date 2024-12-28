@@ -21,10 +21,17 @@ const cats = await getCollection("cats");
 				</p>
 			</Heading>
 
-			<div class="my-8 flex flex-wrap gap-x-8 gap-y-4 items-center justify-center bg-gradient-to-r from-fuchsia-100 to-teal-100 p-4 rounded-2xl">
+			<div
+				id="cat-filter-wrapper"
+				class="my-8 flex flex-wrap gap-x-8 gap-y-4 items-center justify-center bg-gradient-to-r from-fuchsia-100 to-teal-100 p-4 rounded-2xl"
+			>
 				<div>
 					<label for="gender">Gender</label>
-					<select name="gender" id="gender" class="bg-transparent rounded-full ring-1 px-2 py-1 ring-teal-500 mt-2">
+					<select
+						name="gender"
+						id="gender"
+						class="bg-transparent rounded-full ring-1 px-2 py-1 ring-teal-500 mt-2"
+					>
 						<option value="all" class="text-black">All</option>
 						<option value="male">Male</option>
 						<option value="female">Female</option>
@@ -33,21 +40,33 @@ const cats = await getCollection("cats");
 
 				<div>
 					<label for="race">Race</label>
-					<select name="race" id="race" class="bg-transparent rounded-full ring-1 px-2 py-1 ring-teal-500 mt-2">
+					<select
+						name="race"
+						id="race"
+						class="bg-transparent rounded-full ring-1 px-2 py-1 ring-teal-500 mt-2"
+					>
 						<option value="all">All</option>
 					</select>
 				</div>
 
 				<div>
 					<label for="child-friendly">Child Friendly</label>
-					<select name="child-friendly" id="child-friendly" class="bg-transparent rounded-full ring-1 px-2 py-1 ring-teal-500 mt-2">
+					<select
+						name="child-friendly"
+						id="child-friendly"
+						class="bg-transparent rounded-full ring-1 px-2 py-1 ring-teal-500 mt-2"
+					>
 						<option value="all">All</option>
 					</select>
 				</div>
 
 				<div>
 					<label for="sterilized">Sterilized</label>
-					<select name="sterilized" id="sterilized" class="bg-transparent rounded-full ring-1 px-2 py-1 ring-teal-500 mt-2">
+					<select
+						name="sterilized"
+						id="sterilized"
+						class="bg-transparent rounded-full ring-1 px-2 py-1 ring-teal-500 mt-2"
+					>
 						<option value="all">All</option>
 					</select>
 				</div>
@@ -61,86 +80,90 @@ const cats = await getCollection("cats");
 
 <script>
 	document.addEventListener("astro:page-load", () => {
-		const catCards = document.querySelectorAll("[data-cat]")!;
-		const genderFilter = document.getElementById("gender")!;
-		const raceFilter = document.getElementById("race")!;
-		const childFriendlyFilter = document.getElementById("child-friendly")!;
-		const sterilizedFilter = document.getElementById("sterilized")!;
+		const catFilterWrapper = document.getElementById("cat-filter-wrapper")!;
 
-		const catsData = Array.from(catCards).map((card, index) => {
-			const dataCat = card.getAttribute("data-cat");
-			return { index, show: true, ...(dataCat ? JSON.parse(dataCat) : {}) };
-		});
+		if (catFilterWrapper) {
+			const catCards = document.querySelectorAll("[data-cat]")!;
+			const genderFilter = document.getElementById("gender")!;
+			const raceFilter = document.getElementById("race")!;
+			const childFriendlyFilter = document.getElementById("child-friendly")!;
+			const sterilizedFilter = document.getElementById("sterilized")!;
 
-		const updateFilters = () => {
-			const selectedGender = genderFilter ? (genderFilter as HTMLSelectElement).value : "all";
-			const selectedRace = raceFilter ? (raceFilter as HTMLSelectElement).value : "all";
-			const selectedChildFriendly = childFriendlyFilter
-				? (childFriendlyFilter as HTMLSelectElement).value
-				: "all";
-			const selectedSterilized = sterilizedFilter ? (sterilizedFilter as HTMLSelectElement).value : "all";
-
-			catsData.forEach((cat) => {
-				cat.show =
-					(selectedGender === "all" || cat.gender === selectedGender) &&
-					(selectedRace === "all" || cat.race === selectedRace) &&
-					(selectedChildFriendly === "all" || cat.childFriendly.toString() === selectedChildFriendly) &&
-					(selectedSterilized === "all" || cat.sterilized.toString() === selectedSterilized);
+			const catsData = Array.from(catCards).map((card, index) => {
+				const dataCat = card.getAttribute("data-cat");
+				return { index, show: true, ...(dataCat ? JSON.parse(dataCat) : {}) };
 			});
 
-			catCards.forEach((card, index) => {
-				if (catsData[index].show) {
-					card.classList.remove("hidden");
-				} else {
-					card.classList.add("hidden");
-				}
-			});
+			const updateFilters = () => {
+				const selectedGender = genderFilter ? (genderFilter as HTMLSelectElement).value : "all";
+				const selectedRace = raceFilter ? (raceFilter as HTMLSelectElement).value : "all";
+				const selectedChildFriendly = childFriendlyFilter
+					? (childFriendlyFilter as HTMLSelectElement).value
+					: "all";
+				const selectedSterilized = sterilizedFilter ? (sterilizedFilter as HTMLSelectElement).value : "all";
+
+				catsData.forEach((cat) => {
+					cat.show =
+						(selectedGender === "all" || cat.gender === selectedGender) &&
+						(selectedRace === "all" || cat.race === selectedRace) &&
+						(selectedChildFriendly === "all" || cat.childFriendly.toString() === selectedChildFriendly) &&
+						(selectedSterilized === "all" || cat.sterilized.toString() === selectedSterilized);
+				});
+
+				catCards.forEach((card, index) => {
+					if (catsData[index].show) {
+						card.classList.remove("hidden");
+					} else {
+						card.classList.add("hidden");
+					}
+				});
+
+				updateOptions();
+			};
+
+			const updateOptions = () => {
+				const visibleCats = catsData.filter((cat) => cat.show);
+
+				const races = new Set(visibleCats.map((cat) => cat.race));
+				const selectedRace = (raceFilter as HTMLSelectElement).value;
+				raceFilter.innerHTML = '<option value="all">All</option>';
+				races.forEach((race) => {
+					const option = document.createElement("option");
+					option.value = race;
+					option.textContent = race;
+					raceFilter.appendChild(option);
+				});
+				(raceFilter as HTMLSelectElement).value = selectedRace;
+
+				const childFriendlyOptions = new Set(visibleCats.map((cat) => cat.childFriendly.toString()));
+				const selectedChildFriendly = (childFriendlyFilter as HTMLSelectElement).value;
+				childFriendlyFilter.innerHTML = '<option value="all">All</option>';
+				childFriendlyOptions.forEach((optionValue) => {
+					const option = document.createElement("option");
+					option.value = optionValue;
+					option.textContent = optionValue === "true" ? "Yes" : "No";
+					childFriendlyFilter.appendChild(option);
+				});
+				(childFriendlyFilter as HTMLSelectElement).value = selectedChildFriendly;
+
+				const sterilizedOptions = new Set(visibleCats.map((cat) => cat.sterilized.toString()));
+				const selectedSterilized = (sterilizedFilter as HTMLSelectElement).value;
+				sterilizedFilter.innerHTML = '<option value="all">All</option>';
+				sterilizedOptions.forEach((optionValue) => {
+					const option = document.createElement("option");
+					option.value = optionValue;
+					option.textContent = optionValue === "true" ? "Yes" : "No";
+					sterilizedFilter.appendChild(option);
+				});
+				(sterilizedFilter as HTMLSelectElement).value = selectedSterilized;
+			};
+
+			genderFilter.addEventListener("change", updateFilters);
+			raceFilter.addEventListener("change", updateFilters);
+			childFriendlyFilter.addEventListener("change", updateFilters);
+			sterilizedFilter.addEventListener("change", updateFilters);
 
 			updateOptions();
-		};
-
-		const updateOptions = () => {
-			const visibleCats = catsData.filter((cat) => cat.show);
-
-			const races = new Set(visibleCats.map((cat) => cat.race));
-			const selectedRace = (raceFilter as HTMLSelectElement).value;
-			raceFilter.innerHTML = '<option value="all">All</option>';
-			races.forEach((race) => {
-				const option = document.createElement("option");
-				option.value = race;
-				option.textContent = race;
-				raceFilter.appendChild(option);
-			});
-			(raceFilter as HTMLSelectElement).value = selectedRace;
-
-			const childFriendlyOptions = new Set(visibleCats.map((cat) => cat.childFriendly.toString()));
-			const selectedChildFriendly = (childFriendlyFilter as HTMLSelectElement).value;
-			childFriendlyFilter.innerHTML = '<option value="all">All</option>';
-			childFriendlyOptions.forEach((optionValue) => {
-				const option = document.createElement("option");
-				option.value = optionValue;
-				option.textContent = optionValue === "true" ? "Yes" : "No";
-				childFriendlyFilter.appendChild(option);
-			});
-			(childFriendlyFilter as HTMLSelectElement).value = selectedChildFriendly;
-
-			const sterilizedOptions = new Set(visibleCats.map((cat) => cat.sterilized.toString()));
-			const selectedSterilized = (sterilizedFilter as HTMLSelectElement).value;
-			sterilizedFilter.innerHTML = '<option value="all">All</option>';
-			sterilizedOptions.forEach((optionValue) => {
-				const option = document.createElement("option");
-				option.value = optionValue;
-				option.textContent = optionValue === "true" ? "Yes" : "No";
-				sterilizedFilter.appendChild(option);
-			});
-			(sterilizedFilter as HTMLSelectElement).value = selectedSterilized;
-		};
-
-		genderFilter.addEventListener("change", updateFilters);
-		raceFilter.addEventListener("change", updateFilters);
-		childFriendlyFilter.addEventListener("change", updateFilters);
-		sterilizedFilter.addEventListener("change", updateFilters);
-
-		updateOptions();
+		}
 	});
 </script>

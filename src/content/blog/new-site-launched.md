@@ -1,7 +1,7 @@
 ---
 title: New Site Launched
 slug: new-site-launched
-image: src/assets/images/pexels-thirdman-8942612.jpg
+image: src/assets/images/pexels-thirdman-8942612.webp
 imageAlt: image of cat
 excerpt: Announcing the launch of our new cat shelter website.
 publishDate: 2024-01-21

@@ -1,48 +1,106 @@
-# Astro Starter Kit: Basics
+# Pawstronaut
 
-```sh
-npm create astro@latest -- --template basics
-```
+Pawstronaut is a free theme for the Astro framework, designed specifically for animal shelters. It provides a beautiful and functional starting point for your next animal shelter website. Whether you're running a cat shelter, dog shelter, or any other type of animal rescue organization, Pawstronaut has you covered with its clean design and easy-to-use components.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 🌟 About Pawstronaut
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Pawstronaut is perfect for animal shelter owners, developers, and designers who want to quickly set up a stylish and responsive website. It leverages modern web technologies to ensure a smooth and performant user experience.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## 🛠️ Technologies Used
 
-## 🚀 Project Structure
+-   **Astro**: The core framework for building fast, content-focused websites.
+-   **TailwindCSS**: A utility-first CSS framework for rapid UI development.
+-   **Alpine.js**: A lightweight JavaScript framework for adding interactivity.
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🚀 Installation and Deployment
+
+To get started with Pawstronaut, follow these steps:
+
+1. **Clone Pawstronaut**:
+
+    ```sh
+    git clone https://github.com/your-repo/Pawstronaut.git
+    ```
+
+2. **Install Dependencies**:
+
+    ```sh
+    npm install
+    ```
+
+3. **Run Development Server**:
+
+    ```sh
+    npm run dev
+    ```
+
+4. **Build for Production**:
+
+    ```sh
+    npm run build
+    ```
+
+## 📂 Project Structure
+
+Inside of your Pawstronaut project, you'll see the following folders and files:
 
 ```text
 /
 ├── public/
 │   └── favicon.svg
 ├── src/
+│   ├── assets/
+│   ├── components/
 │   ├── layouts/
 │   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
+│   ├── pages/
+│   │   ├── index.astro
+│   │   ├── about-us.astro
+│   │   ├── blog/
+│   │   ├── cats/
+│   │   ├── contact.astro
+│   │   └── privacy-policy.mdx
+│   └── styles/
 └── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 📄 Premade Pages
 
-## 🧞 Commands
+-   Home
+-   About Us
+-   Blog
+-   Cats
+-   Contact
+-   Privacy Policy
 
-All commands are run from the root of the project, from a terminal:
+## 🧩 Available Components
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+-   Article
+-   Badge
+-   Button
+-   Card
+-   CardBlogPost
+-   CardCat
+-   CardMember
+-   CallToAction
+-   Container
+-   Faq
+-   Footer
+-   FormAdoption
+-   FormContactastro
+-   Header
+-   Heading
+-   Hero
+-   LogoContainer
+-   Map
+-   Members
+-   Section
+-   ShowBlogs
+-   ShowCats
+-   SocialMediaIcons
+-   TableHours
+-   WideImage
 
-## 👀 Want to learn more?
+## 👀 Stuck?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+If you have any questions or need help with Pawstronaut, feel free to reach out to me at info@wpinfusion.com, or open an issue on the [Pawstronaut GitHub repository](https://github.com/wpinfusion/pawstronaut)

@@ -5,18 +5,18 @@ export const menuMain = [
 	},
 	{
 		name: "About Us",
-		url: "/about-us/",
+		url: "/about-us",
 	},
 	{
 		name: "Adopt",
-		url: "/cats/",
+		url: "/cats",
 	},
 	{
 		name: "Blog",
-		url: "/blog/",
+		url: "/blog",
 	},
 	{
 		name: "Contact",
-		url: "/contact/",
+		url: "/contact",
 	},
 ];

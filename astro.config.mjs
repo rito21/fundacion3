@@ -13,7 +13,6 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
 	site: "https://pawstronaut.netlify.app",
 	base: "/",
-	trailingSlash: 'always',
 	integrations: [
 		tailwind(),
 		alpinejs(),

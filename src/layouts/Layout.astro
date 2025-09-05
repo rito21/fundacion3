@@ -24,7 +24,16 @@ import { siteName, siteLang, themeColor } from "~/data/config";
 		<link rel="shortcut icon" href="/favicon.ico" />
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 		<meta name="apple-mobile-web-app-title" content={siteName} />
-		<link rel="manifest" href="/site.webmanifest" />
+                <link rel="manifest" href="/site.webmanifest" />
+
+                <link rel="stylesheet" href="/styles.css" />
+
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+                <link
+                        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+                        rel="stylesheet"
+                />
 
 		<meta property="og:url" content={Astro.url} />
 		<meta property="og:type" content="website" />
@@ -47,6 +56,7 @@ import { siteName, siteLang, themeColor } from "~/data/config";
 		<main>
 			<slot />
 		</main>
-		<Footer />
-	</body>
+                <Footer />
+                <script src="/script.js" defer></script>
+        </body>
 </html>

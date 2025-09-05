@@ -10,29 +10,31 @@ import Address from "~/components/Address.astro";
 ---
 
 <Layout>
-	<Section>
-		<Container>
-			<div class="grid grid-cols-1 gap-8 lg:gap-16 xl:gap-24 lg:grid-cols-2">
-				<div>
-					<Heading>
-						<h2 slot="heading-title" class="h2">Contact</h2>
-						<p slot="heading-content">Get in touch with us for any questions or inquiries.</p>
-					</Heading>
+        <Section>
+                <Container>
+                        <div class="grid grid-cols-1 gap-8 lg:gap-16 xl:gap-24 lg:grid-cols-5">
+                                <div class="lg:col-span-2">
+                                        <Heading>
+                                                <h2 slot="heading-title" class="h2">Contacto</h2>
+                                                <p slot="heading-content">
+                                                        ¿Tienes un caso, quieres colaborar o invitar un taller? Escríbenos.
+                                                </p>
+                                        </Heading>
 
-					<FormContact />
-				</div>
+                                        <FormContact />
+                                </div>
 
-				<div>
-					<Heading>
-						<h2 slot="heading-title" class="h2">Location &amp; Hours</h2>
-						<div slot="heading-content">
-							<Address />
-							<TableHours />
-						</div>
-					</Heading>
-					<Map />
-				</div>
-			</div>
-		</Container>
-	</Section>
+                                <div class="lg:col-span-3">
+                                        <Heading>
+                                                <h2 slot="heading-title" class="h2">Ubicación &amp; Horarios</h2>
+                                                <div slot="heading-content">
+                                                        <Address />
+                                                        <TableHours />
+                                                </div>
+                                        </Heading>
+                                        <Map />
+                                </div>
+                        </div>
+                </Container>
+        </Section>
 </Layout>

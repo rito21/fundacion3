@@ -1,5 +1,12 @@
 ---
 import Layout from "~/layouts/Layout.astro";
+import fs from "node:fs";
+
+const protesisDir = new URL("../../public/images/protesis", import.meta.url);
+const galleryImages: string[] = fs
+  .readdirSync(protesisDir)
+  .filter((file) => /\.(png|jpe?g|gif|webp)$/i.test(file))
+  .map((file) => `/images/protesis/${file}`);
 ---
 <Layout
   title="Fundación Protes Animal – Prótesis de fibra de carbono para animales"
@@ -84,30 +91,11 @@ import Layout from "~/layouts/Layout.astro";
         <div class="parte-b">
           <div id="que-gallery" class="v-gallery" aria-label="Galería vertical" tabindex="0">
             <div class="slider-track">
-              <article class="slide">
-                <img
-                  src="images/fundacion-protes-animal-perro-protesis-fibra-carbono-1.png"
-                  alt="Perro con prótesis de fibra de carbono"
-                />
-              </article>
-              <article class="slide">
-                <img
-                  src="images/fundacion-protes-animal-perro-protesis-fibra-carbono-2.png"
-                  alt="Perro con prótesis de fibra de carbono"
-                />
-              </article>
-              <article class="slide">
-                <img
-                  src="images/fundacion-protes-animal-perro-protesis-fibra-carbono..png"
-                  alt="Perro con prótesis de fibra de carbono"
-                />
-              </article>
-              <article class="slide">
-                <img
-                    src="images/fundacion-protes-animal-perro-protesis-fibra-carbono-4.png"
-                    alt="Perro con prótesis de fibra de carbono"
-                />
-              </article>
+              {galleryImages.map((src) => (
+                <article class="slide">
+                  <img src={src} alt="Perro con prótesis de fibra de carbono" />
+                </article>
+              ))}
             </div>
           </div>
         </div>
@@ -359,9 +347,9 @@ import Layout from "~/layouts/Layout.astro";
           const track = document.querySelector(selector);
           if (!track) return;
 
-          const items = [...track.children];
+          const items = [...track.children] as HTMLElement[];
           items.forEach((child) => {
-            const clone = child.cloneNode(true);
+            const clone = child.cloneNode(true) as HTMLElement;
             clone.setAttribute('aria-hidden', 'true');
             track.appendChild(clone);
           });

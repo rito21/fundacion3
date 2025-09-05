@@ -108,25 +108,6 @@ import Layout from "~/layouts/Layout.astro";
                     alt="Perro con prótesis de fibra de carbono"
                 />
               </article>
-              <!-- duplicate slides for seamless loop -->
-              <article class="slide" aria-hidden="true">
-                <img
-                  src="images/fundacion-protes-animal-perro-protesis-fibra-carbono-1.png"
-                  alt="Perro con prótesis de fibra de carbono"
-                />
-              </article>
-              <article class="slide" aria-hidden="true">
-                <img
-                  src="images/fundacion-protes-animal-perro-protesis-fibra-carbono-2.png"
-                  alt="Perro con prótesis de fibra de carbono"
-                />
-              </article>
-              <article class="slide" aria-hidden="true">
-                <img
-                  src="images/fundacion-protes-animal-perro-protesis-fibra-carbono..png"
-                  alt="Perro con prótesis de fibra de carbono"
-                />
-              </article>
             </div>
           </div>
         </div>
@@ -146,23 +127,6 @@ import Layout from "~/layouts/Layout.astro";
                 autoplay
                 loop
                 playsinline
-              ></video>
-              <!-- duplicate videos for seamless loop -->
-              <video
-                src="videos/fundacion-protes-animal-perro-protesis-fibra-carbono.mp4"
-                muted
-                autoplay
-                loop
-                playsinline
-                aria-hidden="true"
-              ></video>
-              <video
-                src="videos/fundacion-protes-animal-perro-protesis-fibra-carbono-1.mp4"
-                muted
-                autoplay
-                loop
-                playsinline
-                aria-hidden="true"
               ></video>
             </div>
           </div>
@@ -389,5 +353,24 @@ import Layout from "~/layouts/Layout.astro";
         </form>
       </div>
     </section>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const duplicateForLoop = (selector) => {
+          const track = document.querySelector(selector);
+          if (!track) return;
+          const items = [...track.children];
+          items.forEach((child) => {
+            const clone = child.cloneNode(true);
+            clone.setAttribute('aria-hidden', 'true');
+            track.appendChild(clone);
+          });
+          track.style.animation = 'none';
+          void track.offsetHeight;
+          track.style.animation = '';
+        };
+        duplicateForLoop('#que-gallery .slider-track');
+        duplicateForLoop('.video-row .slider-track');
+      });
+    </script>
   </main>
 </Layout>

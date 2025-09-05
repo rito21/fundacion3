@@ -130,15 +130,26 @@ import Layout from "~/layouts/Layout.astro";
         </p>
         <form id="donation-form" class="donation-form" aria-describedby="donar-ayuda">
           <fieldset>
-            <legend id="donar-ayuda">Selecciona frecuencia y monto</legend>
+            <legend id="donar-ayuda" class="visually-hidden">Selecciona frecuencia y monto</legend>
             <div class="frequency" role="radiogroup" aria-label="Frecuencia de donación">
-              <label class="frequency-option active"
-                ><input type="radio" name="frequency" value="once" checked /> Única</label
+              <button
+                type="button"
+                class="frequency-option"
+                data-frequency="once"
+                aria-pressed="true"
               >
-              <label class="frequency-option"
-                ><input type="radio" name="frequency" value="monthly" /> Mensual</label
+                Única
+              </button>
+              <button
+                type="button"
+                class="frequency-option"
+                data-frequency="monthly"
+                aria-pressed="false"
               >
+                Mensual
+              </button>
             </div>
+            <input type="hidden" name="frequency" value="once" />
             <div class="amounts" aria-label="Montos sugeridos">
               <button type="button" class="amount-btn" data-amount="10" aria-pressed="false">
                 $10
@@ -156,6 +167,7 @@ import Layout from "~/layouts/Layout.astro";
               <input
                 type="number"
                 id="custom-amount"
+                name="amount"
                 class="custom-amount"
                 placeholder="Otro monto"
                 min="1"

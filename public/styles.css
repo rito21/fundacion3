@@ -65,6 +65,7 @@ p {
   position: relative;
   z-index: 1;
   margin-top: 2rem;
+
 }
 
 .cta-button {
@@ -193,6 +194,7 @@ p {
   width: 80%;
   margin: 0 auto;
 }
+
 .donation-form fieldset {
   border: 0;
   padding: 0;

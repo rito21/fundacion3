@@ -64,6 +64,8 @@ p {
 .hero-content {
   position: relative;
   z-index: 1;
+  margin-top: 2rem;
+
 }
 
 .cta-button {

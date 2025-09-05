@@ -1,18 +1,20 @@
 ---
-import { siteName } from "~/data/config";
-import SocialMediaIcons from "./SocialMediaIcons.astro";
+import { siteName, email } from "~/data/config";
 const currentYear = new Date().getFullYear();
 ---
 
 <footer class="bg-gradient-to-r from-fuchsia-500 to-teal-500 text-white">
-	<div class="py-12 md:flex md:items-center md:justify-between container">
-		<div class="flex justify-center gap-x-6 md:order-2 [&_svg]:text-white">
-			<SocialMediaIcons />
-		</div>
-		<p class="mt-10 max-md:text-center text-base">
-			&copy; {currentYear}
-			{siteName}. All rights reserved.<br />
-			<a class="underline" href="/privacy-policy">Privacy policy</a>
-		</p>
-	</div>
+        <div class="container py-12 md:flex md:items-center md:justify-between">
+                <div>
+                        <strong>{siteName}</strong><br />
+                        <small>© {currentYear} – sin fines de lucro</small>
+                </div>
+                <ul class="mt-6 md:mt-0 flex flex-col md:flex-row gap-2 md:gap-6 text-base">
+                        <li><a href="#donar">Donar</a></li>
+                        <li><a href="#curso">Cursos</a></li>
+                        <li><a href="#socios">Socios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href={email.href}>{email.label}</a></li>
+                </ul>
+        </div>
 </footer>

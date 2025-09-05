@@ -149,7 +149,7 @@ section.bg-white {
 
 /* Image and video carousels */
 .v-gallery {
-        @apply overflow-hidden h-[31.2rem] w-[90%] mx-auto;
+        @apply overflow-hidden h-[35.2rem] w-[95%] mx-auto;
 }
 
 .v-gallery .slider-track {

@@ -1,11 +1,11 @@
 ---
 import { Image } from "astro:assets";
-import Logo from "~/assets/images/logo-pawstronaut.svg";
+import Logo from "~/assets/images/logo.webp";
 import { siteName, siteSlogan } from "~/data/config";
 ---
 
 <div class="flex items-center gap-2 lg:gap-6">
-	<Logo class="w-auto h-8 lg:h-12" />
+        <Image src={Logo} alt="Logo de Fundación Protes Animal" class="w-auto h-8 lg:h-12" />
 
         <div>
                 <h1 class="text-xl lg:text-4xl font-semibold">{siteName}</h1>

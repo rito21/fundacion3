@@ -1,169 +1,336 @@
 ---
 import Layout from "~/layouts/Layout.astro";
-import Section from "~/components/Section.astro";
-import Container from "~/components/Container.astro";
-import { Image, Picture } from "astro:assets";
-import Hero from "~/components/Hero.astro";
-import Button from "~/components/Button.astro";
-import Faq from "~/components/Faq.astro";
-import CallToAction from "~/components/CallToAction.astro";
-import ShowCats from "~/components/ShowCats.astro";
-import ShowBlogs from "~/components/ShowBlogs.astro";
-import Heading from "~/components/Heading.astro";
-import CatNameGenerator from "~/components/CatNameGenerator.astro";
-
-// Images
-import CatBackground from "~/assets/images/pexels-thirdman-8942612.webp";
-import CatOne from "~/assets/images/pexels-chevonrossouw-2558605.jpg";
-import CatTwo from "~/assets/images/pexels-minan1398-1003994.jpg";
-
-// Faq
-const faq = [
-	{
-		question: "What is the adoption process?",
-		answer: "The adoption process is simple. You can view our available pets on our website. If you see a pet you are interested in, you can contact us to schedule a meet and greet. If you decide to adopt the pet, you will need to fill out an adoption application and pay the adoption fee. Once the adoption is complete, you can take your new pet home!",
-	},
-	{
-		question: "What is the adoption fee?",
-		answer: "The adoption fee varies depending on the pet. The fee covers the cost of spaying/neutering, vaccinations, microchipping, and other medical expenses. The fee also helps support our shelter and the care of our animals.",
-	},
-	{
-		question: "Can I adopt a pet if I live out of state?",
-		answer: "Yes, you can adopt a pet if you live out of state. However, you will need to come to our shelter to meet the pet and complete the adoption process. We do not ship pets, so you will need to pick up your new pet in person.",
-	},
-	{
-		question: "Do you have a return policy?",
-		answer: "Yes, we have a return policy. If for any reason you are unable to keep your adopted pet, you can return the pet to our shelter. We want to ensure that all of our pets find loving forever homes, so we are here to help if you need to return a pet.",
-	},
-];
 ---
+<Layout
+  title="Fundación Protes Animal – Prótesis de fibra de carbono para animales"
+  pageTitle="Fundación Protes Animal"
+  description="Fundación sin fines de lucro que diseña y fabrica prótesis de fibra de carbono para perros y gatos."
+>
+  <main id="contenido">
+    <!-- HERO -->
+    <section id="inicio" class="section hero" aria-labelledby="hero-title">
+      <video
+        class="hero-bg"
+        src="videos/fundacion-protes-animal-perro-protesis-fibra-carbono-1.mp4"
+        muted
+        playsinline
+        autoplay
+        aria-hidden="true"
+      ></video>
+      <div class="hero-content container">
+        <h1 id="hero-title">Movilidad para sus patas. Dignidad para sus vidas.</h1>
+        <p>
+          Diseñamos y fabricamos prótesis de <strong>fibra de carbono</strong> y
+          dispositivos de asistencia para perros y gatos. También formamos a tutores,
+          estudiantes y profesionales en <strong>Fusion 360</strong> e
+          <strong>impresión 3D</strong> para multiplicar el impacto.
+        </p>
+        <br />
+        <a href="#donar" class="cta-button">Apóyanos</a>
+        <a href="#curso" class="cta-button cta-secondary">Aprende con nosotros</a>
+      </div>
+    </section>
 
-<Layout title="Home" pageTitle="Home" description="Welcome to our pet shelter!">
-	<Section class:list={"relative"}>
-		<Picture
-			src={CatBackground}
-			alt="Cat"
-			class:list={"absolute inset-0 w-full h-full object-cover"}
-			loading={"eager"}
-			fetchpriority={"high"}
-		/>
-		<div class="bg-gradient-to-r from-fuchsia-500/60 to-teal-500/80 absolute inset-0"></div>
-		<Container class:list={"relative z-10 h-full lg:min-h-svh lg:h-svh"}>
-			<div class="flex items-center h-full">
-				<div class="ml-auto">
-					<div class="prose prose-xl prose-invert text-white lg:text-right text-balance">
-						<h1 class="text-5xl lg:text-8xl mb-0">Welcome to our pet shelter!</h1>
-						<p>
-							We have a variety of pets available for adoption. Please take a look at our available pets
-							and contact us if you are interested in adopting one. We are always looking for loving homes
-							for our pets. Thank you for considering adoption!
-						</p>
+    <!-- QUE HACEMOS -->
+    <section id="que-hacemos" class="section alt-bg" aria-labelledby="que-title">
+      <div class="contenedor">
+        <div class="parte-a">
+          <h2 id="que-title">Qué hacemos</h2>
+          <div class="grid three cards">
+            <article class="card">
+              <h3>Prótesis a medida</h3>
+              <p>
+                Soluciones livianas y resistentes en fibra de carbono adaptadas a la
+                anatomía y rutina de cada paciente.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Dispositivos de asistencia</h3>
+              <p>
+                Soportes, ortesis y carritos que acompañan la rehabilitación y mejoran
+                la calidad de vida.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Formación</h3>
+              <p>
+                Cursos y talleres de <strong>Fusion 360</strong> e
+                <strong>impresión 3D</strong> para que más personas puedan diseñar y
+                fabricar.
+              </p>
+            </article>
+          </div>
+          <div class="container">
+            <h2 id="impacto-title">Impacto</h2>
+            <div class="stats">
+              <div class="stat">
+                <span class="stat-number" data-target="120">0</span
+                ><span class="stat-label">prótesis entregadas</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number" data-target="85">0</span
+                ><span class="stat-label">animales rehabilitados</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number" data-target="300">0</span
+                ><span class="stat-label">personas formadas</span>
+              </div>
+            </div>
+            <p class="note">
+              *Cifras acumuladas. Actualizamos estos datos cada trimestre.
+            </p>
+          </div>
+        </div>
+        <div class="parte-b">
+          <div id="que-gallery" class="v-gallery" aria-label="Galería vertical" tabindex="0">
+            <article class="slide">
+              <img
+                src="images/fundacion-protes-animal-perro-protesis-fibra-carbono-1.png"
+                alt="Perro con prótesis de fibra de carbono"
+              />
+            </article>
+            <article class="slide">
+              <img
+                src="images/fundacion-protes-animal-perro-protesis-fibra-carbono-2.png"
+                alt="Perro con prótesis de fibra de carbono"
+              />
+            </article>
+            <article class="slide">
+              <img
+                src="images/fundacion-protes-animal-perro-protesis-fibra-carbono..png"
+                alt="Perro con prótesis de fibra de carbono"
+              />
+            </article>
+          </div>
+        </div>
+        <div class="parte-c">
+          <div class="video-row">
+            <video
+              src="videos/fundacion-protes-animal-perro-protesis-fibra-carbono.mp4"
+              muted
+              preload="none"
+            ></video>
+            <video
+              src="videos/fundacion-protes-animal-perro-protesis-fibra-carbono-1.mp4"
+              muted
+              preload="none"
+            ></video>
+          </div>
+        </div>
+      </div>
+    </section>
 
-						<div class="not-prose mt-8">
-							<Button url="/cats" color="white"> Adopt now! </Button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</Container>
-	</Section>
+    <!-- DONAR -->
+    <section id="donar" class="section alt-bg" aria-labelledby="donar-title">
+      <div class="container">
+        <h2 id="donar-title">Tu ayuda cambia pasos por vidas</h2>
+        <p>
+          Con tu aporte financiamos materiales, consultas y becas de prótesis para
+          familias que lo necesitan.
+        </p>
+        <form id="donation-form" class="donation-form" aria-describedby="donar-ayuda">
+          <fieldset>
+            <legend id="donar-ayuda" class="visually-hidden">Selecciona frecuencia y monto</legend>
+            <div class="frequency" role="radiogroup" aria-label="Frecuencia de donación">
+              <button
+                type="button"
+                class="frequency-option"
+                data-frequency="once"
+                aria-pressed="true"
+              >
+                Única
+              </button>
+              <button
+                type="button"
+                class="frequency-option"
+                data-frequency="monthly"
+                aria-pressed="false"
+              >
+                Mensual
+              </button>
+            </div>
+            <input type="hidden" name="frequency" value="once" />
+            <div class="amounts" aria-label="Montos sugeridos">
+              <button type="button" class="amount-btn" data-amount="10" aria-pressed="false">
+                $10
+              </button>
+              <button type="button" class="amount-btn" data-amount="25" aria-pressed="false">
+                $25
+              </button>
+              <button type="button" class="amount-btn" data-amount="50" aria-pressed="false">
+                $50
+              </button>
+              <button type="button" class="amount-btn" data-amount="100" aria-pressed="false">
+                $100
+              </button>
+              <label for="custom-amount" class="visually-hidden">Otro monto</label>
+              <input
+                type="number"
+                id="custom-amount"
+                name="amount"
+                class="custom-amount"
+                placeholder="Otro monto"
+                min="1"
+                inputmode="numeric"
+              />
+            </div>
+            <button type="submit" class="cta-button donate-submit">Donar</button>
+          </fieldset>
+        </form>
+        <details class="transparencia">
+          <summary>¿En qué usamos los fondos?</summary>
+          <ul>
+            <li>Materiales (resinas, fibras, liners, tornillería): 55%</li>
+            <li>Atención y rehabilitación: 25%</li>
+            <li>Becas de formación: 15%</li>
+            <li>Gestión y administración: 5%</li>
+          </ul>
+        </details>
+      </div>
+    </section>
 
-	<Section class:list={"bg-white"}>
-		<Container>
-			<Hero>
-				<div slot="hero-content-left" class="prose">
-					<h2 class="h2 text-teal-500">Adopt a pet today!</h2>
-					<p class="leading-loose">
-						We have a variety of pets available for adoption. Please take a look at our available pets and
-						contact us if you are interested in adopting one. We are always looking for loving homes for our
-						pets. Thank you for considering adoption!
-					</p>
+    <!-- SOCIOS -->
+    <section id="socios" class="section" aria-labelledby="socios-title">
+      <div class="container">
+        <h2 id="socios-title">Socios</h2>
+        <p>
+          Dirigido a veterinarios y hospitales de animales. Por una cuota anual de 80 €,
+          podrán solicitar hasta 5 prótesis al mes sin costo.
+        </p>
+        <div class="partners-slider" aria-label="Socios aliados">
+          <div class="slider-track">
+            <img src="images/logoFundacion.png" alt="Socio 1" />
+            <img src="images/logoFundacion.png" alt="Socio 2" />
+            <img src="images/logoFundacion.png" alt="Socio 3" />
+            <img src="images/logoFundacion.png" alt="Socio 4" />
+          </div>
+        </div>
+      </div>
+    </section>
 
-					<div class="not-prose mt-16">
-						<Button url="/cats">
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								class="inline-block size-5 -mt-1 mr-1"
-								viewBox="0 0 14 14"
-								><path
-									fill="currentColor"
-									fill-rule="evenodd"
-									d="M1.777.053A.5.5 0 0 1 2.3.1l3.917 2.947a6.6 6.6 0 0 1 1.564 0L11.7.1a.5.5 0 0 1 .801.4v8.25h.748a.75.75 0 0 1 0 1.5h-.81a4.5 4.5 0 0 1-.479 1.391l1.376.688a.75.75 0 1 1-.67 1.342l-1.654-.827A4.48 4.48 0 0 1 8 14H6a4.48 4.48 0 0 1-3.011-1.156l-1.654.827a.75.75 0 1 1-.67-1.342l1.376-.688a4.5 4.5 0 0 1-.479-1.391h-.81a.75.75 0 0 1 0-1.5H1.5V.5a.5.5 0 0 1 .277-.447M9.124 7.75a.75.75 0 1 0 0-1.5a.75.75 0 0 0 0 1.5m-4.25 0a.75.75 0 1 0 0-1.5a.75.75 0 0 0 0 1.5m.897 1.605A.5.5 0 0 1 6.25 9h1.5a.5.5 0 0 1 .277.916l-.75.5a.5.5 0 0 1-.554 0l-.75-.5a.5.5 0 0 1-.202-.56Z"
-									clip-rule="evenodd"></path></svg
-							>
-							Adopt a cat
-						</Button>
-					</div>
-				</div>
-				<div slot="hero-content-right" class="-rotate-1">
-					<Image src={CatOne} alt="Cat" class:list={"w-full h-full object-cover rounded-2xl shadow"} />
-				</div>
-			</Hero>
-		</Container>
-	</Section>
+    <!-- CURSOS -->
+    <section id="curso" class="section" aria-labelledby="curso-title">
+      <div class="container">
+        <h2 id="curso-title">Cursos de Fusion 360 e impresión 3D</h2>
+        <p>
+          Aprende el flujo completo para diseñar y fabricar prótesis y dispositivos de
+          asistencia para animales.
+        </p>
+        <div class="grid two cards">
+          <article class="card">
+            <h3>Diseño 3D con Fusion 360</h3>
+            <ul class="bullets">
+              <li>Modelado paramétrico aplicado a anatomía.</li>
+              <li>Escaneo 3D / fotogrametría y adaptación.</li>
+              <li>Generación de STL y preparación de impresión.</li>
+            </ul>
+            <p>
+              <strong>Modalidad:</strong> en vivo online o presencial ·
+              <strong>Duración:</strong> 12 h
+            </p>
+          </article>
+          <article class="card">
+            <h3>Impresión 3D y laminado en carbono</h3>
+            <ul class="bullets">
+              <li>Impresión FDM: materiales, boquillas y parámetros.</li>
+              <li>Postprocesado, pruebas y ajustes.</li>
+              <li>Laminado en fibra de carbono y seguridad.</li>
+            </ul>
+            <p>
+              <strong>Modalidad:</strong> taller práctico ·
+              <strong>Duración:</strong> 10 h
+            </p>
+          </article>
+        </div>
+        <div class="cta-row">
+          <a
+            href="mailto:contacto@protesanimal.org?subject=Inscripción%20cursos"
+            class="cta-button"
+            >Inscribirme</a
+          >
+          <a href="#faq" class="cta-button cta-secondary">Ver temario completo</a>
+        </div>
+      </div>
+    </section>
 
-	<Section>
-		<Container>
-			<Heading>
-				<h2 slot="heading-title" class="h2 text-teal-500">Available Cats</h2>
-				<p slot="heading-content">
-					We have a variety of cats available for adoption. Please take a look at our available cats and
-					contact us if you are interested in adopting one. We are always looking for loving homes for our
-					cats. Thank you for considering adoption!
-				</p>
-			</Heading>
+    <!-- FAQ -->
+    <section id="faq" class="section alt-bg" aria-labelledby="faq-title">
+      <div class="container">
+        <h2 id="faq-title">Preguntas frecuentes</h2>
+        <details>
+          <summary>¿Qué animales pueden usar una prótesis?</summary>
+          <p>
+            Principalmente perros y gatos con amputaciones parciales o totales de
+            extremidades. Evaluamos cada caso junto a profesionales veterinarios.
+          </p>
+        </details>
+        <details>
+          <summary>¿La fibra de carbono es segura y cómoda?</summary>
+          <p>
+            Es muy liviana y resistente. Combinada con liners y acolchados adecuados
+            reduce puntos de presión y mejora el confort.
+          </p>
+        </details>
+        <details>
+          <summary>¿Cuánto dura el proceso?</summary>
+          <p>
+            Desde la evaluación hasta la entrega suele tomar 2–4 semanas, dependiendo de
+            pruebas y ajustes.
+          </p>
+        </details>
+        <details>
+          <summary>¿Otorgan becas o tarifas sociales?</summary>
+          <p>
+            Sí. Administramos un fondo de becas financiado por donaciones para familias
+            que lo necesitan.
+          </p>
+        </details>
+      </div>
+    </section>
 
-			<ShowCats cats={["reckoning", "chairman-meow", "pawdre-hepburn"]} />
-		</Container>
-	</Section>
-
-	<Section class:list={"bg-white"}>
-		<Container>
-			<Hero invert>
-				<div slot="hero-content-left" class="prose">
-					<h2 class="h2 text-fuchsia-500">FAQ</h2>
-					<Faq items={faq} color="fuchsia" />
-				</div>
-				<div slot="hero-content-right" class="rotate-1">
-					<Image src={CatTwo} alt="Cat" class:list={"w-full h-full object-cover rounded-2xl shadow"} />
-				</div>
-			</Hero>
-		</Container>
-	</Section>
-
-	<Section class:list={"relative"}>
-		<Image src={CatBackground} alt="Cat" class:list={"absolute inset-0 w-full h-full object-cover"} />
-		<div class="bg-gradient-to-r from-fuchsia-900/80 to-teal-900/80 absolute inset-0"></div>
-
-		<Container class:list={"relative z-10"}>
-			<CallToAction
-				title="Contact us today to adopt a cat"
-				link={{ title: "Adopt", url: "/cats", color: "white" }}
-			/>
-		</Container>
-	</Section>
-
-	<Section>
-		<Container>
-			<Heading>
-				<h2 slot="heading-title" class="h2 text-teal-500">News from our shelter</h2>
-				<p slot="heading-content">
-					Welcome to our blog! Here you will find the latest news and updates from our pet shelter. We are
-					passionate about helping pets find loving forever homes, and we are excited to share our stories
-					with you. Thank you for supporting our shelter!
-				</p>
-			</Heading>
-
-			<ShowBlogs posts={["hello-world", "new-arrival-luna", "new-site-launched"]} />
-		</Container>
-	</Section>
-
-	<Section class:list={"relative"}>
-		<Image src={CatBackground} alt="Cat" class:list={"absolute inset-0 w-full h-full object-cover"} />
-		<div class="bg-gradient-to-r from-fuchsia-900/80 to-teal-900/80 absolute inset-0"></div>
-
-		<Container class:list={"relative z-10"}>
-			<CatNameGenerator title="Help me name my new cat!" />
-		</Container>
-	</Section>
+    <!-- CONTACTO -->
+    <section id="contacto" class="section" aria-labelledby="contacto-title">
+      <div class="container">
+        <h2 id="contacto-title">Contacto</h2>
+        <p>¿Tienes un caso, quieres colaborar o invitar un taller? Escríbenos.</p>
+        <form id="contact-form" class="contact-form" netlify>
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="name">Nombre</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                required
+                placeholder="Tu nombre"
+              />
+            </div>
+            <div class="form-field">
+              <label for="email">Correo</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+                placeholder="tu@correo.com"
+              />
+            </div>
+            <div class="form-field full">
+              <label for="message">Mensaje</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                required
+                placeholder="¿Cómo podemos ayudarte?"
+              ></textarea>
+            </div>
+          </div>
+          <button type="submit" class="cta-button">Enviar</button>
+        </form>
+      </div>
+    </section>
+  </main>
 </Layout>

@@ -188,6 +188,12 @@ p {
 }
 
 /* Donation form */
+
+.donation-form {
+  width: 80%;
+  margin: 0 auto;
+}
+
 .donation-form fieldset {
   border: 0;
   padding: 0;
@@ -227,5 +233,5 @@ p {
   flex: 1;
   padding: 0.5rem;
   border: 1px solid #cccccc;
-  border-radius: 0.375rem;n
+  border-radius: 0.375rem;
 }

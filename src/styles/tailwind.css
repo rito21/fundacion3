@@ -149,6 +149,7 @@ section.bg-white {
 
 /* Image and video carousels */
 .v-gallery {
+
         @apply overflow-hidden h-[30rem] rounded-xl;
 }
 

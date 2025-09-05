@@ -113,6 +113,7 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
+  justify-content: center;
 }
 
 .stat {
@@ -129,6 +130,10 @@ p {
 .note {
   font-size: 0.875rem;
   color: #555555;
+}
+
+.impacto-container {
+  text-align: center;
 }
 
 /* Navigation */

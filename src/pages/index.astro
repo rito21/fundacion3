@@ -358,11 +358,17 @@ import Layout from "~/layouts/Layout.astro";
         const duplicateForLoop = (selector) => {
           const track = document.querySelector(selector);
           if (!track) return;
-          [...track.children].forEach((child) => {
+
+          const items = [...track.children];
+          items.forEach((child) => {
             const clone = child.cloneNode(true);
             clone.setAttribute('aria-hidden', 'true');
             track.appendChild(clone);
           });
+
+          track.style.animation = 'none';
+          void track.offsetHeight;
+          track.style.animation = '';
         };
         duplicateForLoop('#que-gallery .slider-track');
         duplicateForLoop('.video-row .slider-track');

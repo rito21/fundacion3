@@ -23,7 +23,7 @@ h1,
 h2,
 h3 {
   line-height: 1.2;
-  margin: 0 0 0.5em;
+  margin: 0 0 1.5rem;
 }
 
 p {
@@ -188,7 +188,6 @@ p {
 }
 
 /* Donation form */
-
 .donation-form {
   width: 80%;
   margin: 0 auto;

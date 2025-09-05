@@ -234,4 +234,32 @@ p {
   padding: 0.5rem;
   border: 1px solid #cccccc;
   border-radius: 0.375rem;
+  width: 60%;
 }
+#contacto .container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* centro vertical */
+  align-items: center;      /* centro horizontal */
+  text-align: center;       /* centra el texto (h2, p) */
+}
+
+/* Tamaño y centrado del formulario */
+.contact-form {
+  width: 100%;
+  max-width: 640px;   /* límite en móviles/medianas */
+  margin: 1rem auto 0;
+}
+@media (min-width: 768px) {
+  .contact-form { width: 40%; } /* 40% en escritorio */
+}
+
+/* Asegura que los campos ocupen todo el ancho y queden en columna */
+.form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+

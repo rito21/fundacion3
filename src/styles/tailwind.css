@@ -116,9 +116,69 @@ section.bg-white {
 
 /* caveat-brush-regular - latin */
 @font-face {
-	font-display: swap;
-	font-family: "Caveat Brush";
-	font-style: normal;
-	font-weight: 400;
-	src: url("/fonts/caveat/caveat-brush-v11-latin-regular.woff2") format("woff2");
+        font-display: swap;
+        font-family: "Caveat Brush";
+        font-style: normal;
+        font-weight: 400;
+        src: url("/fonts/caveat/caveat-brush-v11-latin-regular.woff2") format("woff2");
+}
+
+/* Partners slider */
+.partners-slider {
+        @apply overflow-hidden py-4;
+}
+
+.partners-slider .slider-track {
+        @apply flex w-max;
+        animation: scroll 40s linear infinite;
+}
+
+.partners-slider img {
+        @apply h-16 mr-8;
+        object-fit: contain;
+}
+
+@keyframes scroll {
+        0% {
+                transform: translateX(0);
+        }
+        100% {
+                transform: translateX(-50%);
+        }
+}
+
+/* Image and video carousels */
+.v-gallery {
+        @apply overflow-hidden h-[30rem] rounded-xl;
+}
+
+.v-gallery .slider-track {
+        @apply flex flex-col h-full;
+        animation: scroll-vertical 30s linear infinite;
+}
+
+.v-gallery .slide img {
+        @apply w-full h-[30rem] object-cover rounded-xl;
+}
+
+.video-row {
+        @apply overflow-hidden py-4;
+}
+
+.video-row .slider-track {
+        @apply flex w-max;
+        animation: scroll 40s linear infinite;
+}
+
+.video-row video {
+        @apply h-64 mr-4 rounded-lg;
+}
+
+@keyframes scroll-vertical {
+        0% {
+                transform: translateY(0);
+        }
+        100% {
+                transform: translateY(-50%);
+        }
 }

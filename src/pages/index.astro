@@ -98,7 +98,7 @@ import Layout from "~/layouts/Layout.astro";
               </article>
               <article class="slide">
                 <img
-                  src="images/fundacion-protes-animal-perro-protesis-fibra-carbono..png"
+                  src="images/fundacion-protes-animal-perro-protesis-fibra-carbono.png"
                   alt="Perro con prótesis de fibra de carbono"
                 />
               </article>
@@ -314,7 +314,7 @@ import Layout from "~/layouts/Layout.astro";
       <div class="container">
         <h2 id="contacto-title">Contacto</h2>
         <p>¿Tienes un caso, quieres colaborar o invitar un taller? Escríbenos.</p>
-        <form id="contact-form" class="contact-form" netlify>
+        <form id="contact-form" class="contact-form" data-netlify="true">
           <div class="form-grid">
             <div class="form-field">
               <label for="name">Nombre</label>
@@ -355,13 +355,13 @@ import Layout from "~/layouts/Layout.astro";
     </section>
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        const duplicateForLoop = (selector) => {
-          const track = document.querySelector(selector);
+        const duplicateForLoop = (selector: string) => {
+          const track = document.querySelector<HTMLElement>(selector);
           if (!track) return;
 
-          const items = [...track.children];
+          const items = [...track.children] as HTMLElement[];
           items.forEach((child) => {
-            const clone = child.cloneNode(true);
+            const clone = child.cloneNode(true) as HTMLElement;
             clone.setAttribute('aria-hidden', 'true');
             track.appendChild(clone);
           });

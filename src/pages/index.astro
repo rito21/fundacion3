@@ -358,12 +358,14 @@ import Layout from "~/layouts/Layout.astro";
         const duplicateForLoop = (selector) => {
           const track = document.querySelector(selector);
           if (!track) return;
+
           const items = [...track.children];
           items.forEach((child) => {
             const clone = child.cloneNode(true);
             clone.setAttribute('aria-hidden', 'true');
             track.appendChild(clone);
           });
+
           track.style.animation = 'none';
           void track.offsetHeight;
           track.style.animation = '';

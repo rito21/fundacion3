@@ -146,3 +146,39 @@ section.bg-white {
                 transform: translateX(-50%);
         }
 }
+
+/* Image and video carousels */
+.v-gallery {
+        @apply overflow-hidden h-96;
+}
+
+.v-gallery .slider-track {
+        @apply flex flex-col h-full;
+        animation: scroll-vertical 30s linear infinite;
+}
+
+.v-gallery .slide img {
+        @apply w-full h-96 object-cover;
+}
+
+.video-row {
+        @apply overflow-hidden py-4;
+}
+
+.video-row .slider-track {
+        @apply flex w-max;
+        animation: scroll 40s linear infinite;
+}
+
+.video-row video {
+        @apply h-64 mr-4 rounded-lg;
+}
+
+@keyframes scroll-vertical {
+        0% {
+                transform: translateY(0);
+        }
+        100% {
+                transform: translateY(-50%);
+        }
+}

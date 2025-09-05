@@ -1,19 +1,19 @@
 // Global variables
-export const siteLang = "en-US";
-export const siteCurrency = "USD";
-export const siteDomain = "pawstronaut.com";
-export const siteName = "Pawstronaut";
-export const siteSlogan = "The best pet shelter in the galaxy!";
-export const themeColor = "#FF0000";
+export const siteLang = "es-ES";
+export const siteCurrency = "EUR";
+export const siteDomain = "protesanimal.org";
+export const siteName = "Fundación Protes Animal";
+export const siteSlogan = "Prótesis de fibra de carbono para animales";
+export const themeColor = "#0d9488";
 
 export const phone = {
-	href: "tel:+123456789",
-	label: "(123) 456-789",
+        href: "tel:+34123456789",
+        label: "+34 123 456 789",
 };
 
 export const email = {
-	href: "mailto:info@pawstronaut.com",
-	label: "info@pawstronaut.com",
+        href: "mailto:contacto@protesanimal.org",
+        label: "contacto@protesanimal.org",
 };
 
 export const address = {
@@ -25,26 +25,16 @@ export const address = {
 };
 
 export const socialMedia = {
-	facebook: {
-		url: "https://facebook.com",
-		label: "Facebook",
-		icon: "facebook",
-	},
-	x: {
-		url: "https://x.com",
-		label: "X",
-		icon: "x",
-	},
-	instagram: {
-		url: "https://instagram.com",
-		label: "Instagram",
-		icon: "instagram",
-	},
-	youtube: {
-		url: "https://youtube.com",
-		label: "YouTube",
-		icon: "youtube",
-	},
+        instagram: {
+                url: "https://www.instagram.com/protesanimal",
+                label: "Instagram",
+                icon: "instagram",
+        },
+        facebook: {
+                url: "https://www.facebook.com/protesanimal",
+                label: "Facebook",
+                icon: "facebook",
+        },
 };
 
 export const hours = {

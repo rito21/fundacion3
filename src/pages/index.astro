@@ -1,13 +1,15 @@
 ---
 import Layout from "~/layouts/Layout.astro";
-const imageImports = import.meta.glob<string>(
+
+const imageImports = import.meta.glob(
   "../assets/images/protesis/*.{png,jpg,jpeg,webp}",
   {
     eager: true,
+    query: "?url",
     import: "default",
   }
 );
-const protesisImages: string[] = Object.values(imageImports);
+const protesisImages = Object.values(imageImports) as string[];
 
 ---
 <Layout

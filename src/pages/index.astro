@@ -1,11 +1,14 @@
 ---
 import Layout from "~/layouts/Layout.astro";
+const imageImports = import.meta.glob<string>(
+  "../assets/images/protesis/*.{png,jpg,jpeg,webp}",
+  {
+    eager: true,
+    import: "default",
+  }
+);
+const protesisImages: string[] = Object.values(imageImports);
 
-const imageImports = import.meta.glob("../assets/images/protesis/*.{png,jpg,jpeg,webp}", {
-  eager: true,
-  import: "default",
-});
-const protesisImages = Object.values(imageImports);
 ---
 <Layout
   title="Fundación Protes Animal – Prótesis de fibra de carbono para animales"

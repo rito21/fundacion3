@@ -154,7 +154,7 @@ section.bg-white {
 
 .v-gallery .slider-track {
         @apply flex flex-col h-full;
-        animation: scroll-vertical 30s linear infinite;
+        animation: scroll-vertical 30s linear infinite alternate;
 }
 
 .v-gallery .slide img {
@@ -179,6 +179,6 @@ section.bg-white {
                 transform: translateY(0);
         }
         100% {
-                transform: translateY(-50%);
+                transform: translateY(calc(-100% + 35.2rem));
         }
 }

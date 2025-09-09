@@ -1,5 +1,11 @@
 ---
 import Layout from "~/layouts/Layout.astro";
+
+const imageImports = import.meta.glob("../assets/images/protesis/*.{png,jpg,jpeg,webp}", {
+  eager: true,
+  import: "default",
+});
+const protesisImages = Object.values(imageImports);
 ---
 <Layout
   title="Fundación Protes Animal – Prótesis de fibra de carbono para animales"
@@ -84,30 +90,11 @@ import Layout from "~/layouts/Layout.astro";
         <div class="parte-b">
           <div id="que-gallery" class="v-gallery" aria-label="Galería vertical" tabindex="0">
             <div class="slider-track">
-              <article class="slide">
-                <img
-                  src="images/fundacion-protes-animal-perro-protesis-fibra-carbono-1.png"
-                  alt="Perro con prótesis de fibra de carbono"
-                />
-              </article>
-              <article class="slide">
-                <img
-                  src="images/fundacion-protes-animal-perro-protesis-fibra-carbono-2.png"
-                  alt="Perro con prótesis de fibra de carbono"
-                />
-              </article>
-              <article class="slide">
-                <img
-                  src="images/fundacion-protes-animal-perro-protesis-fibra-carbono.png"
-                  alt="Perro con prótesis de fibra de carbono"
-                />
-              </article>
-              <article class="slide">
-                <img
-                    src="images/fundacion-protes-animal-perro-protesis-fibra-carbono-4.png"
-                    alt="Perro con prótesis de fibra de carbono"
-                />
-              </article>
+              {protesisImages.map((src) => (
+                <article class="slide">
+                  <img src={src} alt="Perro con prótesis de fibra de carbono" />
+                </article>
+              ))}
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 ---
 title: Hello World
 slug: hello-world
-image: src/assets/images/pexels-chevonrossouw-2558605.jpg
+image: src/assets/images/protesis/fundacion-protes-animal-perro-protesis-fibra-carbono.png
 imageAlt: image of cat
 excerpt: This is a simple blog post.
 publishDate: 2024-01-21

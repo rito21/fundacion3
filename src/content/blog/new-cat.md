@@ -1,7 +1,7 @@
 ---
 title: New Arrival - Meet Luna!
 slug: new-arrival-luna
-image: src/assets/images/pexels-minan1398-1003994.jpg
+image: src/assets/images/protesis/fundacion-protes-animal-perro-protesis-fibra-carbono.png
 imageAlt: image of cat
 excerpt: Introducing Luna, our newest resident at the shelter.
 publishDate: 2024-01-21

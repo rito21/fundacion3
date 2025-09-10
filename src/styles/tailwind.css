@@ -153,7 +153,7 @@ section.bg-white {
 }
 
 .v-gallery .slider-track {
-        @apply flex flex-col h-full;
+        @apply flex flex-col;
         animation: scroll-vertical 30s linear infinite alternate;
 }
 

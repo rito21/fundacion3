@@ -13,7 +13,7 @@
 		"catFriendly": true,
 		"outsideCat": true,
 		"sterilized": true,
-		"image": "/src/assets/images/pets/cats/captain-meow.jpg"
+		"image": "/src/assets/images/protesis/fundacion-protes-animal-perro-protesis-fibra-carbono.png"
 	},
 	{
 		"id": "catrick-swayze",
@@ -29,7 +29,7 @@
 		"catFriendly": true,
 		"outsideCat": false,
 		"sterilized": true,
-		"image": "/src/assets/images/pets/cats/catrick-swayze.jpg"
+		"image": "/src/assets/images/protesis/fundacion-protes-animal-perro-protesis-fibra-carbono.png"
 	},
 	{
 		"id": "clawdia",
@@ -45,7 +45,7 @@
 		"catFriendly": true,
 		"outsideCat": false,
 		"sterilized": true,
-		"image": "/src/assets/images/pets/cats/clawdia.jpg"
+		"image": "/src/assets/images/protesis/fundacion-protes-animal-perro-protesis-fibra-carbono.png"
 	},
 	{
 		"id": "furrball-mcwhiskers",
@@ -61,7 +61,7 @@
 		"catFriendly": true,
 		"outsideCat": true,
 		"sterilized": false,
-		"image": "/src/assets/images/pets/cats/furrball-mcwhiskers.jpg"
+		"image": "/src/assets/images/protesis/fundacion-protes-animal-perro-protesis-fibra-carbono.png"
 	},
 	{
 		"id": "pawdre-hepburn",
@@ -77,7 +77,7 @@
 		"catFriendly": true,
 		"outsideCat": false,
 		"sterilized": true,
-		"image": "/src/assets/images/pets/cats/pawdre-hepburn.jpg"
+		"image": "/src/assets/images/protesis/fundacion-protes-animal-perro-protesis-fibra-carbono.png"
 	},
 	{
 		"id": "purrlock-holmes",
@@ -93,7 +93,7 @@
 		"catFriendly": true,
 		"outsideCat": false,
 		"sterilized": true,
-		"image": "/src/assets/images/pets/cats/purrlock-holmes.jpg"
+		"image": "/src/assets/images/protesis/fundacion-protes-animal-perro-protesis-fibra-carbono.png"
 	},
 	{
 		"id": "reckoning",
@@ -109,7 +109,7 @@
 		"catFriendly": true,
 		"outsideCat": false,
 		"sterilized": true,
-		"image": "/src/assets/images/pets/cats/reckoning.jpg"
+		"image": "/src/assets/images/protesis/fundacion-protes-animal-perro-protesis-fibra-carbono.png"
 	},
 	{
 		"id": "sir-pounce-a-lot",
@@ -125,7 +125,7 @@
 		"catFriendly": true,
 		"outsideCat": false,
 		"sterilized": true,
-		"image": "/src/assets/images/pets/cats/sir-pounce-a-lot.jpg"
+		"image": "/src/assets/images/protesis/fundacion-protes-animal-perro-protesis-fibra-carbono.png"
 	},
 	{
 		"id": "whiskerfield-stallone",
@@ -141,6 +141,6 @@
 		"catFriendly": true,
 		"outsideCat": false,
 		"sterilized": true,
-		"image": "/src/assets/images/pets/cats/whiskerfield-stallone.jpg"
+		"image": "/src/assets/images/protesis/fundacion-protes-animal-perro-protesis-fibra-carbono.png"
 	}
 ]

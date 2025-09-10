@@ -1,7 +1,7 @@
 ---
 title: New Site Launched
 slug: new-site-launched
-image: src/assets/images/pexels-thirdman-8942612.webp
+image: src/assets/images/protesis/fundacion-protes-animal-perro-protesis-fibra-carbono.png
 imageAlt: image of cat
 excerpt: Announcing the launch of our new cat shelter website.
 publishDate: 2024-01-21

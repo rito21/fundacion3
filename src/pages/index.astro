@@ -11,6 +11,20 @@ const imageImports = import.meta.glob(
 );
 const protesisImages = Object.values(imageImports) as string[];
 
+const videoImports = import.meta.glob<string>(
+  "../assets/videos/protesis/*.{mp4,webm,ogg}",
+  {
+    eager: true,
+    query: "?url",
+    import: "default",
+  }
+);
+
+const protesisVideos = Object.entries(videoImports)
+  .sort(([a], [b]) => a.localeCompare(b))
+  .map(([, src]) => src);
+const heroVideo = protesisVideos[0] ?? "";
+
 ---
 <Layout
   title="Fundación Protes Animal – Prótesis de fibra de carbono para animales"
@@ -22,7 +36,7 @@ const protesisImages = Object.values(imageImports) as string[];
     <section id="inicio" class="section hero" aria-labelledby="hero-title">
       <video
         class="hero-bg"
-        src="videos/fundacion-protes-animal-perro-protesis-fibra-carbono-1.mp4"
+        src={heroVideo}
         muted
         playsinline
         autoplay
@@ -106,20 +120,15 @@ const protesisImages = Object.values(imageImports) as string[];
         <div class="parte-c">
           <div class="video-row">
             <div class="slider-track">
-              <video
-                src="videos/fundacion-protes-animal-perro-protesis-fibra-carbono.mp4"
-                muted
-                autoplay
-                loop
-                playsinline
-              ></video>
-              <video
-                src="videos/fundacion-protes-animal-perro-protesis-fibra-carbono-1.mp4"
-                muted
-                autoplay
-                loop
-                playsinline
-              ></video>
+              {protesisVideos.map((src) => (
+                <video
+                  src={src}
+                  muted
+                  autoplay
+                  loop
+                  playsinline
+                ></video>
+              ))}
             </div>
           </div>
         </div>
